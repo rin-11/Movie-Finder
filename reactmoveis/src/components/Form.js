@@ -24,6 +24,7 @@ const Form = (props) => {
   //The component must return some JSX
   return (
     <div>
+        <h1>MOVIE FINDER</h1>
       <form onSubmit={handleSubmit}>
         <input type="text"
             name="searchterm"

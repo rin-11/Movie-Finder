@@ -5,15 +5,25 @@ import React from "react";
 // You can also destructure your props directly from the parameter list
 const MovieDisplay = ({ movie }) => {
   //The component must return some JSX
+  const loaded = () => {
   return (
     <>
-      <h1>{movie.Title}</h1>
-      <h2>{movie.Genre}</h2>
+      <h2>{movie.Title}</h2>
+      <h4>{movie.Genre}</h4>
       <img src={movie.Poster} alt={movie.Title} />
-      <h2>{movie.Year}</h2>
+      <h3>{movie.Year}</h3>
     </>
   );
 };
+
+    //function to return loading JSX
+    const loading = () => {
+        return <h2>No Movie to Display</h2>
+    };
+    //Ternanry operator will determin which functions JSX we will return
+    return movie ? loaded() : loading();
+};
+
 
 // We must export the component to use it in other files
 export default MovieDisplay;
